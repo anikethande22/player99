@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+<!-- Add link to Bootstrap core CSS and any custom stylesheets -->
+
+{% block body %}
+<div class="container">
+    Bookings
+    <br>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Library</th>
+            <th scope="col">User</th>
+            <th scope="col">Booking Date</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Is Delivered</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for l in bookings %}
+          <tr>
+            <th scope="row">{{ l.productid }}</th>
+            <td>{{ l.userid }}</td>
+            <td>{{ l.bookingdate }}</td>
+            <td>{{ l.cost }}</td>
+            <td>{{ l.quantity }}</td>
+            <td>{{ l.isdelivered }}</td>
+            <td>
+                <a href="{% url 'update_booking' g.id %}"><button class="btn btn-primary">Delivered</button></a>
+                <!-- <a href=""><button>Delete</button></a> -->
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}
