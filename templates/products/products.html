@@ -19,9 +19,15 @@
             <h5 class="card-title">{{ product.title }}</h5>
             <h5 class="card-title">{{ product.price }}</h5>
             <p class="card-text">{{ product.description }}</p>
+            <div class="col-12 m-3"> 
             <a href="{% url 'update_products' product.id %}" class="btn btn-primary">Update </a>
+            </div>
+            <div class="col-12 m-3"> 
             <a href="{% url 'delete_products' product.id %}" class="btn btn-primary">Delete </a>
+            </div>
+            <div class="col-12 m-3"> 
             <a href="{% url 'place_order' product.id %}" class="btn btn-primary">Order </a>
+            </div> 
           </div>
         </div>
       </div>
