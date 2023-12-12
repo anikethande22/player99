@@ -1,5 +1,5 @@
 from django.db import models
-from products.models import Products
+from appproducts.models import Products
 from django.contrib.auth.models import User
 
 class Bookings(models.Model):
